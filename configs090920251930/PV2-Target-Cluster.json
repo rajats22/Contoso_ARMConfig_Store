@@ -1,0 +1,211 @@
+{
+  "id": "/subscriptions/c3d3eb0c-9ba7-4d4c-828e-cb6874714034/resourcegroups/Contoso-AKS-RG/providers/Microsoft.ContainerService/managedClusters/PV2-Target-Cluster",
+  "name": "PV2-Target-Cluster",
+  "type": "Microsoft.ContainerService/ManagedClusters",
+  "location": "southeastasia",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "powerState": {
+      "code": "Running"
+    },
+    "kubernetesVersion": "1.32.6",
+    "currentKubernetesVersion": "1.32.6",
+    "dnsPrefix": "PV2-Target-Cluster-dns",
+    "fqdn": "pv2-target-cluster-dns-d41bqb04.hcp.southeastasia.azmk8s.io",
+    "azurePortalFQDN": "pv2-target-cluster-dns-d41bqb04.portal.hcp.southeastasia.azmk8s.io",
+    "agentPoolProfiles": [
+      {
+        "name": "agentpool",
+        "count": 2,
+        "vmSize": "Standard_D2ls_v5",
+        "osDiskSizeGB": 128,
+        "osDiskType": "Managed",
+        "kubeletDiskType": "OS",
+        "maxPods": 110,
+        "type": "VirtualMachineScaleSets",
+        "availabilityZones": [
+          "1",
+          "2",
+          "3"
+        ],
+        "maxCount": 5,
+        "minCount": 2,
+        "enableAutoScaling": true,
+        "scaleDownMode": "Delete",
+        "provisioningState": "Succeeded",
+        "powerState": {
+          "code": "Running"
+        },
+        "orchestratorVersion": "1.32.6",
+        "currentOrchestratorVersion": "1.32.6",
+        "enableNodePublicIP": false,
+        "mode": "System",
+        "osType": "Linux",
+        "osSKU": "AzureLinux",
+        "nodeImageVersion": "AKSAzureLinux-V3gen2-202508.11.0",
+        "upgradeSettings": {
+          "maxSurge": "10%"
+        },
+        "enableFIPS": false
+      },
+      {
+        "name": "userpool",
+        "count": 1,
+        "vmSize": "Standard_D2ls_v5",
+        "osDiskSizeGB": 128,
+        "osDiskType": "Managed",
+        "kubeletDiskType": "OS",
+        "maxPods": 110,
+        "type": "VirtualMachineScaleSets",
+        "maxCount": 25,
+        "minCount": 1,
+        "enableAutoScaling": true,
+        "scaleDownMode": "Delete",
+        "provisioningState": "Succeeded",
+        "powerState": {
+          "code": "Running"
+        },
+        "orchestratorVersion": "1.32.6",
+        "currentOrchestratorVersion": "1.32.6",
+        "enableNodePublicIP": false,
+        "mode": "User",
+        "osType": "Linux",
+        "osSKU": "AzureLinux",
+        "nodeImageVersion": "AKSAzureLinux-V3gen2-202508.11.0",
+        "upgradeSettings": {
+          "maxSurge": "10%"
+        },
+        "enableFIPS": false
+      }
+    ],
+    "windowsProfile": {
+      "adminUsername": "azureuser",
+      "enableCSIProxy": true
+    },
+    "servicePrincipalProfile": {
+      "clientId": "msi"
+    },
+    "addonProfiles": {
+      "azureKeyvaultSecretsProvider": {
+        "enabled": false,
+        "config": null
+      },
+      "azurepolicy": {
+        "enabled": true,
+        "config": null,
+        "identity": {
+          "resourceId": "/subscriptions/c3d3eb0c-9ba7-4d4c-828e-cb6874714034/resourcegroups/MC_Contoso-AKS-RG_PV2-Target-Cluster_southeastasia/providers/Microsoft.ManagedIdentity/userAssignedIdentities/azurepolicy-pv2-target-cluster",
+          "clientId": "2e97ee7f-72ad-4012-896f-542111036b9f",
+          "objectId": "35bbf17e-34b4-4cf0-8645-129ce39d81c8"
+        }
+      },
+      "extensionManager": {
+        "enabled": true,
+        "config": null
+      }
+    },
+    "nodeResourceGroup": "MC_Contoso-AKS-RG_PV2-Target-Cluster_southeastasia",
+    "enableRBAC": true,
+    "supportPlan": "KubernetesOfficial",
+    "networkProfile": {
+      "networkPlugin": "azure",
+      "networkPluginMode": "overlay",
+      "networkDataplane": "azure",
+      "loadBalancerSku": "Standard",
+      "loadBalancerProfile": {
+        "managedOutboundIPs": {
+          "count": 1
+        },
+        "effectiveOutboundIPs": [
+          {
+            "id": "/subscriptions/c3d3eb0c-9ba7-4d4c-828e-cb6874714034/resourceGroups/MC_Contoso-AKS-RG_PV2-Target-Cluster_southeastasia/providers/Microsoft.Network/publicIPAddresses/29ca62df-4986-4293-8fa1-eb90e754e71c"
+          }
+        ]
+      },
+      "podCidr": "10.244.0.0/16",
+      "serviceCidr": "10.0.0.0/16",
+      "dnsServiceIP": "10.0.0.10",
+      "outboundType": "loadBalancer",
+      "podCidrs": [
+        "10.244.0.0/16"
+      ],
+      "serviceCidrs": [
+        "10.0.0.0/16"
+      ],
+      "ipFamilies": [
+        "IPv4"
+      ]
+    },
+    "aadProfile": {
+      "managed": true,
+      "adminGroupObjectIDs": null,
+      "adminUsers": null,
+      "enableAzureRBAC": true,
+      "tenantID": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+    },
+    "maxAgentPools": 100,
+    "identityProfile": {
+      "kubeletidentity": {
+        "resourceId": "/subscriptions/c3d3eb0c-9ba7-4d4c-828e-cb6874714034/resourcegroups/MC_Contoso-AKS-RG_PV2-Target-Cluster_southeastasia/providers/Microsoft.ManagedIdentity/userAssignedIdentities/PV2-Target-Cluster-agentpool",
+        "clientId": "5696f419-b906-4466-bf82-133076142d91",
+        "objectId": "f871a041-a960-4482-a952-e883a14f0f01"
+      }
+    },
+    "autoScalerProfile": {
+      "balance-similar-node-groups": "false",
+      "expander": "random",
+      "max-empty-bulk-delete": "10",
+      "max-graceful-termination-sec": "600",
+      "max-node-provision-time": "15m",
+      "max-total-unready-percentage": "45",
+      "new-pod-scale-up-delay": "0s",
+      "ok-total-unready-count": "3",
+      "scale-down-delay-after-add": "10m",
+      "scale-down-delay-after-delete": "10s",
+      "scale-down-delay-after-failure": "3m",
+      "scale-down-unneeded-time": "10m",
+      "scale-down-unready-time": "20m",
+      "scale-down-utilization-threshold": "0.5",
+      "scan-interval": "10s",
+      "skip-nodes-with-local-storage": "false",
+      "skip-nodes-with-system-pods": "true"
+    },
+    "autoUpgradeProfile": {
+      "upgradeChannel": "patch"
+    },
+    "disableLocalAccounts": true,
+    "securityProfile": {
+      "imageCleaner": {
+        "enabled": false,
+        "intervalHours": 168
+      },
+      "workloadIdentity": {
+        "enabled": false
+      }
+    },
+    "storageProfile": {
+      "diskCSIDriver": {
+        "enabled": true
+      },
+      "fileCSIDriver": {
+        "enabled": true
+      },
+      "snapshotController": {
+        "enabled": true
+      }
+    },
+    "oidcIssuerProfile": {
+      "enabled": false
+    },
+    "workloadAutoScalerProfile": {}
+  },
+  "sku": {
+    "name": "Base",
+    "tier": "Free"
+  },
+  "identity": {
+    "principal_id": "b8dd6d9f-9dcc-4335-95cf-8d5cc426fee4",
+    "tenant_id": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+    "type": "SystemAssigned"
+  }
+}
