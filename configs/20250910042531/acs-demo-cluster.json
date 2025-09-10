@@ -1,0 +1,139 @@
+{
+  "id": "/subscriptions/dd80b94e-0463-4a65-8d04-c94f403879dc/resourcegroups/acs-demo-rg/providers/Microsoft.ContainerService/managedClusters/acs-demo-cluster",
+  "name": "acs-demo-cluster",
+  "type": "Microsoft.ContainerService/ManagedClusters",
+  "location": "eastus2",
+  "properties": {
+    "provisioningState": "Succeeded",
+    "powerState": {
+      "code": "Running"
+    },
+    "kubernetesVersion": "1.27",
+    "currentKubernetesVersion": "1.27.9",
+    "dnsPrefix": "acs-demo-c-acs-demo-rg-dd80b9",
+    "fqdn": "acs-demo-c-acs-demo-rg-dd80b9-c12ur7k7.hcp.eastus2.azmk8s.io",
+    "azurePortalFQDN": "acs-demo-c-acs-demo-rg-dd80b9-c12ur7k7.portal.hcp.eastus2.azmk8s.io",
+    "agentPoolProfiles": [
+      {
+        "name": "nodepool1",
+        "count": 3,
+        "vmSize": "Standard_L8s_v2",
+        "osDiskSizeGB": 128,
+        "osDiskType": "Managed",
+        "kubeletDiskType": "OS",
+        "workloadRuntime": "OCIContainer",
+        "maxPods": 110,
+        "type": "VirtualMachineScaleSets",
+        "enableAutoScaling": false,
+        "provisioningState": "Succeeded",
+        "powerState": {
+          "code": "Running"
+        },
+        "orchestratorVersion": "1.27.9",
+        "currentOrchestratorVersion": "1.27.9",
+        "enableNodePublicIP": false,
+        "nodeLabels": {
+          "acstor.azure.com/io-engine": "acstor"
+        },
+        "mode": "System",
+        "enableEncryptionAtHost": false,
+        "enableUltraSSD": false,
+        "osType": "Linux",
+        "osSKU": "Ubuntu",
+        "nodeImageVersion": "AKSUbuntu-2204gen2containerd-202408.12.0",
+        "upgradeSettings": {},
+        "enableFIPS": false
+      }
+    ],
+    "linuxProfile": {
+      "adminUsername": "azureuser",
+      "ssh": {
+        "publicKeys": [
+          {
+            "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDK6jSltHgagzyykW4FDrEMjIPbhZR0SOnfmxa5xupQJc5spGxtoIBpW6QYHU9eXxbtRwoqc0z5Nds5XeNssRsKyYfGnIyJvB9vKBTpBbg06vaHrQY/npTkIWFT4gp5s9RljqhBCLbUDAHBJYqibq/5a+3SX5x2pO/Pa9tZBcDfbe0Bny5ZbzfGdGvVZ2In5z9VXdxavGA3NPeUMFvwDcNILpFHFsXd01Ppr67B5/1eC2eDQJQgtMgO1xdyskYLMUHl/XkpYgENBzFAhG3p3OmPdZ4Sp0kSymiMdZyWWwwx7ltGYVF5oE+yYRPUdGw3q30UEq2iAg4wq4qTq5+U0Nav"
+          }
+        ]
+      }
+    },
+    "servicePrincipalProfile": {
+      "clientId": "msi"
+    },
+    "addonProfiles": {
+      "extensionManager": {
+        "enabled": true,
+        "config": null,
+        "identity": {
+          "resourceId": "/subscriptions/dd80b94e-0463-4a65-8d04-c94f403879dc/resourcegroups/MC_acs-demo-rg_acs-demo-cluster_eastus2/providers/Microsoft.ManagedIdentity/userAssignedIdentities/extensionmanager-acs-demo-cluster",
+          "clientId": "912015bd-024d-430c-b2eb-3c26b3f262a2",
+          "objectId": "3720a053-3277-49fc-859d-84b2b179cef9"
+        }
+      }
+    },
+    "nodeResourceGroup": "MC_acs-demo-rg_acs-demo-cluster_eastus2",
+    "enableRBAC": true,
+    "enablePodSecurityPolicy": false,
+    "supportPlan": "KubernetesOfficial",
+    "networkProfile": {
+      "networkPlugin": "kubenet",
+      "loadBalancerSku": "Standard",
+      "loadBalancerProfile": {
+        "managedOutboundIPs": {
+          "count": 1
+        },
+        "effectiveOutboundIPs": [
+          {
+            "id": "/subscriptions/dd80b94e-0463-4a65-8d04-c94f403879dc/resourceGroups/MC_acs-demo-rg_acs-demo-cluster_eastus2/providers/Microsoft.Network/publicIPAddresses/ff018f0d-c5b5-4677-9850-ffa3327e9f14"
+          }
+        ]
+      },
+      "podCidr": "10.244.0.0/16",
+      "serviceCidr": "10.0.0.0/16",
+      "dnsServiceIP": "10.0.0.10",
+      "outboundType": "loadBalancer",
+      "podCidrs": [
+        "10.244.0.0/16"
+      ],
+      "serviceCidrs": [
+        "10.0.0.0/16"
+      ],
+      "ipFamilies": [
+        "IPv4"
+      ]
+    },
+    "maxAgentPools": 100,
+    "identityProfile": {
+      "kubeletidentity": {
+        "resourceId": "/subscriptions/dd80b94e-0463-4a65-8d04-c94f403879dc/resourcegroups/MC_acs-demo-rg_acs-demo-cluster_eastus2/providers/Microsoft.ManagedIdentity/userAssignedIdentities/acs-demo-cluster-agentpool",
+        "clientId": "0ef4afb0-20e9-4799-83e5-5430603bd80e",
+        "objectId": "bf73e86e-6d11-4483-8914-46771eb1e7ad"
+      }
+    },
+    "autoUpgradeProfile": {},
+    "disableLocalAccounts": false,
+    "securityProfile": {},
+    "storageProfile": {
+      "diskCSIDriver": {
+        "enabled": true
+      },
+      "fileCSIDriver": {
+        "enabled": true
+      },
+      "snapshotController": {
+        "enabled": true
+      }
+    },
+    "oidcIssuerProfile": {
+      "enabled": false
+    },
+    "workloadAutoScalerProfile": {}
+  },
+  "sku": {
+    "name": "Base",
+    "tier": "Free"
+  },
+  "identity": {
+    "principal_id": "daa63bf1-ac24-4723-a1e9-4a73dc5d61f3",
+    "tenant_id": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+    "type": "SystemAssigned"
+  }
+}
